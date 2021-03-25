@@ -1,6 +1,7 @@
 package com.example.zup.vacinabrasil.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -10,8 +11,9 @@ public class Vacina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty(message = "Name cannot be empty")
     private String vaccineName;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", referencedColumnName = "id")
     private Usuario usuario;
     private LocalDate vaccinationDate;

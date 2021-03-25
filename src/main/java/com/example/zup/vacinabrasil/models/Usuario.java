@@ -3,10 +3,7 @@ package com.example.zup.vacinabrasil.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,19 +15,19 @@ public class Usuario {
     @Column(unique = true)
     private String cpf;
     private int age;
+    @NotEmpty(message = "Name cannot be empty")
     private String name;
     @Column(unique = true)
     private String email;
     @JsonBackReference
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.MERGE)
-//    @Size(max = 2)
     private List<Vacina> vacina;
 
     public Usuario() {
     }
 
-    public Usuario(Long id, @NotNull String cpf, @NotNull int age, @NotNull String name,
-                    @NotNull @Email String email, List<Vacina> vacina) {
+    public Usuario(Long id, String cpf, int age, String name,
+                   String email, List<Vacina> vacina) {
         this.cpf = cpf;
         this.id = id;
         this.age = age;
@@ -46,8 +43,19 @@ public class Usuario {
         Usuario usuario = (Usuario) o;
         return id.equals(usuario.id) &&
                 cpf.equals(usuario.cpf) &&
-                email.equals(usuario.email) &&
-                vacina.equals(usuario.vacina);
+                email.equals(usuario.email);
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", cpf='" + cpf + '\'' +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", vacina=" + vacina +
+                '}';
     }
 
     @Override
@@ -80,11 +88,11 @@ public class Usuario {
     }
 
 
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public void setCpf(String cpf){
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

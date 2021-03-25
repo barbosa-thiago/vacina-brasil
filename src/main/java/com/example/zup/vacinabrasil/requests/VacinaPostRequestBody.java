@@ -16,6 +16,12 @@ public class VacinaPostRequestBody {
     private Usuario usuario;
     private LocalDate vaccinationDate;
 
+    public VacinaPostRequestBody(@NotEmpty String vaccineName, @NotNull Usuario usuario, LocalDate vaccinationDate) {
+        this.vaccineName = vaccineName;
+        this.usuario = usuario;
+        this.vaccinationDate = vaccinationDate;
+    }
+
     public String getVaccineName() {
         return vaccineName;
     }
