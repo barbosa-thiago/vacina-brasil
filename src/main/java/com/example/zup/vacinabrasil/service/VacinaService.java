@@ -20,4 +20,7 @@ public class VacinaService {
         vacinaPostRequestBody.setVaccinationDate(LocalDate.now());
         return vacinaRepository.save(VacinaMapper.INSTANCE.toVacina(vacinaPostRequestBody));
     }
+    public Iterable<Vacina> findAll(){
+        return vacinaRepository.findAll();
+    }
 }
