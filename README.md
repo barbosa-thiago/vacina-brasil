@@ -3,7 +3,7 @@ Demo project
 
 
 Necessita o docker instalado. Rodar imagem do banco com o comando
-```sudo docker-compose up```
+```sudo docker-compose -f stack.yml up```
 
 
   **Endpoint para método post de Usuario**
