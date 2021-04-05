@@ -1,5 +1,6 @@
 package com.example.zup.vacinabrasil.util;
 
+import com.example.zup.vacinabrasil.VaccineName;
 import com.example.zup.vacinabrasil.models.Usuario;
 import com.example.zup.vacinabrasil.models.UsuarioBuilder;
 import com.example.zup.vacinabrasil.models.Vacina;
@@ -40,7 +41,7 @@ public class EntityCreator {
 
     public static Vacina createVacinaToBeSaved() {
         return new VacinaBuilder()
-                .vaccineName("coronavac")
+                .vaccineName(VaccineName.CORONAVAC)
                 .vaccinationDate(LocalDate.now())
                 .usuario(createValidUsuario())
                 .createVacina();
@@ -49,14 +50,14 @@ public class EntityCreator {
     public static Vacina createValidVacina() {
         return new VacinaBuilder()
                 .id(1L)
-                .vaccineName("coronavac")
+                .vaccineName(VaccineName.CORONAVAC)
                 .vaccinationDate(LocalDate.now())
                 .usuario(createValidUsuario())
                 .createVacina();
     }
 
     public static VacinaPostRequestBody createVacinaPostRequestBody(){
-        return new VacinaPostRequestBody("coronavac",
+        return new VacinaPostRequestBody(VaccineName.CORONAVAC,
                 createValidUsuario(),
                 LocalDate.now());
     }

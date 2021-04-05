@@ -1,32 +1,32 @@
 package com.example.zup.vacinabrasil.requests;
 
+import com.example.zup.vacinabrasil.VaccineName;
 import com.example.zup.vacinabrasil.models.Usuario;
 
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class VacinaPostRequestBody {
 
-    @NotEmpty
-    private String vaccineName;
+    @NotNull
+    private VaccineName vaccineName;
     @ManyToOne
     @NotNull
     private Usuario usuario;
     private LocalDate vaccinationDate;
 
-    public VacinaPostRequestBody(@NotEmpty String vaccineName, @NotNull Usuario usuario, LocalDate vaccinationDate) {
+    public VacinaPostRequestBody(@NotNull VaccineName vaccineName, @NotNull Usuario usuario, LocalDate vaccinationDate) {
         this.vaccineName = vaccineName;
         this.usuario = usuario;
         this.vaccinationDate = vaccinationDate;
     }
 
-    public String getVaccineName() {
+    public VaccineName getVaccineName() {
         return vaccineName;
     }
 
-    public void setVaccineName(String vaccineName) {
+    public void setVaccineName(VaccineName vaccineName) {
         this.vaccineName = vaccineName;
     }
 

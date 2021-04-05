@@ -1,11 +1,13 @@
 package com.example.zup.vacinabrasil.models;
 
+import com.example.zup.vacinabrasil.VaccineName;
+
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class VacinaBuilder {
     private Long id;
-    private @NotNull String vaccineName;
+    private @NotNull VaccineName vaccineName;
     private @NotNull Usuario usuario;
     private @NotNull LocalDate vaccinationDate;
 
@@ -14,7 +16,7 @@ public class VacinaBuilder {
         return this;
     }
 
-    public VacinaBuilder vaccineName(@NotNull String vaccineName) {
+    public VacinaBuilder vaccineName(@NotNull VaccineName vaccineName) {
         this.vaccineName = vaccineName;
         return this;
     }

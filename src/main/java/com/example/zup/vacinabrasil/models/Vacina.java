@@ -1,9 +1,9 @@
 package com.example.zup.vacinabrasil.models;
 
+import com.example.zup.vacinabrasil.VaccineName;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -13,8 +13,8 @@ public class Vacina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotEmpty(message = "Name cannot be empty")
-    private String vaccineName;
+    @NotNull(message = "Name cannot be empty")
+    private VaccineName vaccineName;
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", referencedColumnName = "id")
@@ -24,7 +24,7 @@ public class Vacina {
     public Vacina() {
     }
 
-    public Vacina(Long id, @NotNull String vaccineName, @NotNull Usuario usuario, @NotNull LocalDate vaccinationDate) {
+    public Vacina(Long id, @NotNull VaccineName vaccineName, @NotNull Usuario usuario, @NotNull LocalDate vaccinationDate) {
         this.id = id;
         this.vaccineName = vaccineName;
         this.usuario = usuario;
@@ -49,11 +49,11 @@ public class Vacina {
         this.id = id;
     }
 
-    public String getVaccineName() {
+    public VaccineName getVaccineName() {
         return vaccineName;
     }
 
-    public void setVaccineName(String vaccineName) {
+    public void setVaccineName(VaccineName vaccineName) {
         this.vaccineName = vaccineName;
     }
 
