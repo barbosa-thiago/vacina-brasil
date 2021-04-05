@@ -18,8 +18,8 @@ http://localhost:8080/usuarios
   **Endpoint para método post de Vacina**
 http://localhost:8080/vacinas
   Recebe os campos:
-  - vaccineName
-  - Objeto Usuario com campo "id"
+  - vaccineName (número 1 para CORONAVAC, número 2 para ASTRAZENECA)
+  - Objeto Usuario com campo "id" (usuario deve estar previamente cadastrado)
 
 Comando para rodar todos os testes:
 ```mvn test -Pintegration-tests```
