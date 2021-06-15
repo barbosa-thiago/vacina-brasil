@@ -1,6 +1,6 @@
 package com.example.zup.vacinabrasil.models;
 
-import com.example.zup.vacinabrasil.VaccineName;
+import com.example.zup.vacinabrasil.enumvaccinename.VaccineName;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
 package com.example.zup.vacinabrasil.requests;
 
-import com.example.zup.vacinabrasil.VaccineName;
+import com.example.zup.vacinabrasil.enumvaccinename.VaccineName;
 import com.example.zup.vacinabrasil.models.Usuario;
 
 import javax.persistence.ManyToOne;

@@ -1,6 +1,6 @@
 package com.example.zup.vacinabrasil.util;
 
-import com.example.zup.vacinabrasil.VaccineName;
+import com.example.zup.vacinabrasil.enumvaccinename.VaccineName;
 import com.example.zup.vacinabrasil.models.Usuario;
 import com.example.zup.vacinabrasil.models.UsuarioBuilder;
 import com.example.zup.vacinabrasil.models.Vacina;
@@ -8,9 +8,7 @@ import com.example.zup.vacinabrasil.models.VacinaBuilder;
 import com.example.zup.vacinabrasil.requests.UsuarioPostRequestBody;
 import com.example.zup.vacinabrasil.requests.VacinaPostRequestBody;
 
-import javax.persistence.EntityManager;
 import java.time.LocalDate;
-import java.util.List;
 
 public class EntityCreator {
     public static UsuarioPostRequestBody createUsuarioPostRequestBody() {
